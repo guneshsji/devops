@@ -19,12 +19,12 @@ provider:
   role: ${ssm:/${env:ENV}/lambda-role-arn}
   stage:  ${opt:stage,'dev'}
   region: us-east-1
-  vpc:
-    securityGroupIds:
-      - ${ssm:/${env:ENV}/lambda-sg}
-    subnetIds:
-      - ${ssm:/${env:ENV}/private-subnet-1}
-      - ${ssm:/${env:ENV}/private-subnet-2}
+#   vpc:
+#     securityGroupIds:
+#       - ${ssm:/${env:ENV}/lambda-sg}
+#     subnetIds:
+#       - ${ssm:/${env:ENV}/private-subnet-1}
+#       - ${ssm:/${env:ENV}/private-subnet-2}
   environment:
     DB_NAME: ${self:custom.secrets.${self:provider.stage}.db_name}
     DB_USER: ${self:custom.secrets.${self:provider.stage}.db_creds.username}

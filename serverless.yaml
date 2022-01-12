@@ -27,8 +27,8 @@ provider:
 #       - ${ssm:/${env:ENV}/private-subnet-2}
   environment:
     DB_NAME: ${self:custom.secrets.${self:provider.stage}.db_name}
-    DB_USER: ${self:custom.secrets.${self:provider.stage}.db_creds.username}
-    DB_PASSWORD: ${self:custom.secrets.${self:provider.stage}.db_creds.password}
+    DB_USER: ${self:custom.secrets.${self:provider.stage}.rds-secret.username}
+    DB_PASSWORD: ${self:custom.secrets.${self:provider.stage}.rds-secret.password}
     DB_HOST: ${self:custom.secrets.${self:provider.stage}.db_host}
     DB_PORT: ${self:custom.secrets.${self:provider.stage}.db_port}
     ACCOUNT_ID: ${self:custom.secrets.${self:provider.stage}.account_id}
